@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./layout.module.css";
+import SortSearchAlgorithmLayout from "./SortSearchAlgorithmLayout";
 
-const Layout = () => {
+const Layout = (props) => {
   return (
-    <div>
-      <div className={styles["data-form-sidebar"]}>data side bar</div>
-      <div className={styles["code-sidebar"]}>code side bar</div>
-      <div className={styles["array-sidebar"]}> array side bar</div>
+    <div className={styles.wrapper}>
+      <SortSearchAlgorithmLayout />
     </div>
   );
 };
