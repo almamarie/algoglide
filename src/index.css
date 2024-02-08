@@ -1,0 +1,67 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #635ef7;
+  --color-primary-light: #e6e5ff;
+
+  /* Backgrounds */
+  --bg-level-wht: #fff;
+  --bg-level-1: #f8f8fa;
+  --bg-level-2: #f5f5f5;
+  --bg-level-3: #efefef;
+  --bg-footer: #373660;
+
+  /* Gradient */
+  --color-gradient: linear-gradient(to right, #75d7d9, var(--color-primary));
+
+  /* UI Colors */
+  --color-red: #ec5b53;
+  --color-violet: #918ef5;
+  --color-yellow: #feeb9d;
+  --color-blue: #2a61db;
+  --color-blue-light: #d9e4fc;
+  --color-orange: #f99d49;
+  --color-rose: #fdcae4;
+
+  /* System Colors */
+  --color-error: var(--color-red);
+  --color-success: #e5f2d3;
+
+  /* Button background Colors */
+  --btn-bg-color: var(--color-blue);
+  --btn-hover-color: rgb(121, 118, 247);
+  --btn-active-color: rgb(92, 88, 225);
+  --btn-visited-color: rgb(92, 88, 225);
+  --btn-diabled-color: rgb(177, 174, 245);
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("./fonts/RedHatDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: normal;
+  font-variation-settings: "wght" 300 900;
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("./fonts/RedHatDisplay-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 300 900;
+  font-style: italic;
+  font-variation-settings: "wght" 300 900;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
