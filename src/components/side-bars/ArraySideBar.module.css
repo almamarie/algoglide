@@ -1,0 +1,16 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.main-area {
+  background-color: var(--color-blue);
+  height: 80%;
+  width: 90%;
+
+  border-radius: var(--default-border-radius) var(--default-border-radius) 0 0;
+}

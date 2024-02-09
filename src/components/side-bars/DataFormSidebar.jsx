@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 import styles from "./DataFormSidebar.module.css";
-import algorithmsObject from "../../lib/algorithms";
+import algorithmsObject, { extractAlgorithms } from "../../lib/algorithms";
 import AlgorithmContext from "../../context/algorithm-context";
 import { MAX_ALGORITHM_SPEED, MIN_ALGORITHM_SPEED } from "../../lib/constants";
+import SideBarContext from "../../context/side-bar-context";
 const DataFormSidebar = () => {
   const algoCtx = useContext(AlgorithmContext);
-  // algorithm type
-  // algorithm
-  // algorithm speed
-  // show/hide algorithm code
+  const sideBarsCtx = useContext(SideBarContext);
 
   const algorithmTypeHandler = (event) => {
     const value = event.target.value;
@@ -24,6 +22,13 @@ const DataFormSidebar = () => {
     const value = event.target.value;
     algoCtx.setAlgorithmSpeed(value);
   };
+
+  const codeBarToggleHandler = (event) => {
+    event.preventDefault();
+    sideBarsCtx.toggleShowCodeSideBar();
+  };
+
+  const extractedAlgorithms = extractAlgorithms(algoCtx.algorithmType);
 
   return (
     <form className={styles.form}>
@@ -59,7 +64,7 @@ const DataFormSidebar = () => {
         >
           <option value=""> -- Please select -- </option>
           {algoCtx.algorithmType &&
-            algorithmsObject[algoCtx.algorithmType].map((algo, index) => {
+            extractedAlgorithms.map((algo, index) => {
               return (
                 <option key={index} value={algo}>
                   {algo}
@@ -84,7 +89,13 @@ const DataFormSidebar = () => {
         {/* </span> */}
       </div>
 
-      <button>Toggle side bar</button>
+      <button
+        className={styles["code-bar-toggle-btn"]}
+        type="text"
+        onClick={codeBarToggleHandler}
+      >
+        {sideBarsCtx.showCodeSideBar ? "Close Code Bar" : "Show Code Bar"}
+      </button>
       {/* <button type="text" onChange={}>{algoCtx.}</button> */}
     </form>
   );

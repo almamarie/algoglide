@@ -31,3 +31,24 @@
 .algo-speed span {
   font-size: var(--text-small-font-size);
 }
+
+.code-bar-toggle-btn {
+  color: var(--color-white);
+  background-color: var(--btn-bg-color);
+  border-radius: var(--default-border-radius);
+  border: none;
+  cursor: pointer;
+  padding: 1.6rem 2.4rem;
+}
+
+.code-bar-toggle-btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.code-bar-toggle-btn:active {
+  background-color: var(--btn-active-color);
+}
+
+.code-bar-toggle-btn:visited {
+  background-color: var(--btn-visited-color);
+}

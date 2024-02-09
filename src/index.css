@@ -35,7 +35,9 @@
   --color-error: var(--color-red);
   --color-success: #e5f2d3;
 
-  /* Button background Colors */
+  /* Button background Colors 
+   * NOTE: THESE ARE USED. 
+   */
   --btn-bg-color: var(--color-blue);
   --btn-hover-color: rgb(121, 118, 247);
   --btn-active-color: rgb(92, 88, 225);
@@ -92,10 +94,14 @@ html {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Red Hat Display", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--color-violet);
+  color: var(--primary-text-color);
 }

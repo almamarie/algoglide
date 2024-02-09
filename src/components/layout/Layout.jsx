@@ -3,9 +3,12 @@ import styles from "./layout.module.css";
 import SortSearchAlgorithmLayout from "./SortSearchAlgorithmLayout";
 import GraphAlgorithmLayout from "./GraphAlgorithmLayout";
 import AlgorithmContext from "../../context/algorithm-context";
+import CodeSideBar from "../side-bars/CodeSideBar";
+import SideBarContext from "../../context/side-bar-context";
 
 const Layout = (props) => {
   const algorithmCtx = useContext(AlgorithmContext);
+  const sideBarsCtx = useContext(SideBarContext);
 
   return (
     <div className={styles.wrapper}>
@@ -16,6 +19,8 @@ const Layout = (props) => {
       {algorithmCtx.algorithmType === "graph algorithms" && (
         <GraphAlgorithmLayout />
       )}
+
+      {sideBarsCtx.showCodeSideBar && <CodeSideBar />}
     </div>
   );
 };

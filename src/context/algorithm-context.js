@@ -38,7 +38,7 @@ export const AlgorithmContextProvider = (props) => {
 
   const changeAlgorithm = (algorithm) => {
     const algorithmExists = algorithmsObject[algorithmType].find(
-      (algo) => algo === algorithm
+      (algo) => Object.keys(algo)[0] === algorithm
     );
     if (!algorithmExists) return;
 
