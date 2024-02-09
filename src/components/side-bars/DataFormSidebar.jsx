@@ -78,7 +78,7 @@ const DataFormSidebar = () => {
         <label className={styles.label} htmlFor="algo-select">
           Algorithm Speed
         </label>
-        {/* <span className={styles["algo-speed"]}> */}
+
         <input
           type="range"
           onChange={algorithmSpeedHandler}
@@ -86,7 +86,6 @@ const DataFormSidebar = () => {
           max={MAX_ALGORITHM_SPEED}
         />
         <span>{`${algoCtx.algorithmSpeed} ms`}</span>
-        {/* </span> */}
       </div>
 
       <button
@@ -96,7 +95,6 @@ const DataFormSidebar = () => {
       >
         {sideBarsCtx.showCodeSideBar ? "Close Code Bar" : "Show Code Bar"}
       </button>
-      {/* <button type="text" onChange={}>{algoCtx.}</button> */}
     </form>
   );
 };
