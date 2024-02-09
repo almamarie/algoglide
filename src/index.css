@@ -1,4 +1,13 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
 :root {
+  /* ========================= The Below Colors are to Be Changed ============================= */
   /* Primary Colors */
   --color-primary: #635ef7;
   --color-primary-light: #e6e5ff;
@@ -32,6 +41,31 @@
   --btn-active-color: rgb(92, 88, 225);
   --btn-visited-color: rgb(92, 88, 225);
   --btn-diabled-color: rgb(177, 174, 245);
+
+  /* ========================= To Be Changed Ends Here ============================= */
+  /* Text Colors */
+  --primary-text-color: var(--color-primary-light);
+
+  /* Font sizes */
+  --text-small-font-size: 2rem;
+  --text-medium-font-size: 2.4rem;
+  --text-large-font-size: 3rem;
+
+  /* Margins */
+  --very-small-margin: 1.2rem;
+  --small-margin: 2.4rem;
+  --medium-margin: 3.2rem;
+  --large-margin: 4.8rem;
+
+  /* Font weights */
+  --default-font-weight: 400;
+  --medium-font-weight: 500;
+  --semi-bold-font-weight: 600;
+  --bold-font-weight: 700;
+
+  /* Border radii */
+  --default-border-radius: 9px;
+  --medium-border-radius: 11px;
 }
 
 @font-face {

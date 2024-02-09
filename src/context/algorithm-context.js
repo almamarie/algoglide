@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import algorithmsObject from "../lib/algorithms";
+import {
+  DEFAULT_ALGORITHM_SPEED,
+  MAX_ALGORITHM_SPEED,
+  MIN_ALGORITHM_SPEED,
+} from "../lib/constants";
 
-const defaultAlgorithmSpeed = 1000;
 const signals = ["start", "stop", "pause"];
-const algorithmTypes = Object.keys(algorithmsObject);
 
 const AlgorithmContext = React.createContext({
-  algorithmSpeed: defaultAlgorithmSpeed,
+  algorithmSpeed: DEFAULT_ALGORITHM_SPEED,
   algorithmType: null,
   algorithm: null,
   runningAlgorithmSignal: "stop",
@@ -18,23 +21,25 @@ const AlgorithmContext = React.createContext({
 });
 
 export const AlgorithmContextProvider = (props) => {
-  const [algorithmSpeed, setAlgorithmSpeed] = useState(defaultAlgorithmSpeed);
+  const [algorithmSpeed, setAlgorithmSpeed] = useState(DEFAULT_ALGORITHM_SPEED);
   const [algorithmType, setAlgorithmType] = useState(null);
   const [algorithm, setAlgorithm] = useState(null);
   const [runningAlgorithmSignal, setRunningAlgorithmSignal] = useState("stop");
 
   const changeAlgorithmSpeed = (speed) => {
-    if (speed < 1 || speed > 10000) return;
+    if (speed < MIN_ALGORITHM_SPEED || speed > MAX_ALGORITHM_SPEED) return;
     setAlgorithmSpeed(speed);
   };
 
   const changeAlgorithmType = (algorithm) => {
-    if (!algorithmTypes[algorithm]) return;
+    if (!algorithmsObject[algorithm]) return;
     setAlgorithmType(algorithm);
   };
 
   const changeAlgorithm = (algorithm) => {
-    const algorithmExists = algorithmsObject[algorithmType].find(algorithm);
+    const algorithmExists = algorithmsObject[algorithmType].find(
+      (algo) => algo === algorithm
+    );
     if (!algorithmExists) return;
 
     setAlgorithm(algorithm);

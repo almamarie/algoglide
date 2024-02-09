@@ -1,0 +1,33 @@
+.form {
+  margin: 0 auto;
+  margin: var(--small-margin);
+
+  color: var(--primary-text-color);
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--large-margin);
+}
+
+.label {
+  font-size: var(--text-small-font-size);
+  margin-bottom: var(--very-small-margin);
+  font-weight: var(--medium-font-weight);
+}
+
+.select,
+.input {
+  height: 3rem;
+  text-align: center;
+  border-radius: var(--medium-border-radius);
+}
+
+.algo-speed input {
+  width: 100%;
+  cursor: grab;
+}
+
+.algo-speed span {
+  font-size: var(--text-small-font-size);
+}
