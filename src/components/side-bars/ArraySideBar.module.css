@@ -12,5 +12,71 @@
   height: 80%;
   width: 90%;
 
+  padding: 2rem;
+
   border-radius: var(--default-border-radius) var(--default-border-radius) 0 0;
+}
+
+.main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upper-part {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.auto-gen-btn {
+  background-color: var(--btn-hover-color);
+}
+
+.element-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 8rem;
+}
+
+.element-add-button {
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: 1rem;
+
+  cursor: pointer;
+  border: none;
+
+  padding: 0;
+  width: 3rem;
+
+  display: block;
+  text-align: center;
+}
+
+.element-add-button:hover {
+  color: yellow;
+}
+
+.element-input {
+  width: 10rem;
+  font-size: 2.4rem;
+  padding: 1rem;
+
+  border-radius: var(--default-border-radius);
+  border: none;
+}
+
+.array-elements {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  display: block;
+  text-align: center;
+}
+
+.signal-btns {
+  display: flex;
+  gap: 1rem;
 }

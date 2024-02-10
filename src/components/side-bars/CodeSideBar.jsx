@@ -11,11 +11,13 @@ const CodeSideBar = () => {
   const codes = getAlgorithmCodes(algoCtx.algorithmType, algoCtx.algorithm);
 
   const [currentLang, setCurrentLang] = useState(
-    !codes ? null : Object.values(codes)[0]
+    !codes ? null : Object.keys(codes)[0]
   );
+  const [codeCopied, setCodeCopied] = useState(false);
 
   const changeCurrentLang = (lang) => {
     return () => {
+      setCurrentLang(lang);
       return setCurrentLang(lang);
     };
   };
@@ -24,16 +26,22 @@ const CodeSideBar = () => {
     sideBarsCtx.toggleShowCodeSideBar();
   };
 
-  // RESEARCH: How to display codes using html
-  // RESEARCH: How codes are displayed on websites
+  const copyCodeToClipboard = () => {
+    setCodeCopied(true);
+    navigator.clipboard.writeText(codes[currentLang]);
+  };
 
   return (
     <div className={styles.wrapper}>
       <span className={styles["close-button"]} onClick={closeBarHandler}>
         x
       </span>
+
       {codes ? (
-        <div className={styles.main}>
+        <main className={styles.main}>
+          <span className={styles["copy-button"]} onClick={copyCodeToClipboard}>
+            {codeCopied ? "copied" : "copy"}
+          </span>
           <nav>
             <ul className={styles["language-ul"]}>
               {Object.keys(codes).map((language, index) => {
@@ -46,8 +54,10 @@ const CodeSideBar = () => {
             </ul>
           </nav>
 
-          <code>{codes[currentLang]}</code>
-        </div>
+          <pre>
+            <code className={styles.code}>{codes[currentLang]}</code>
+          </pre>
+        </main>
       ) : (
         <div className={styles["no-algo-selected-wrapper"]}>
           <span className={styles["no-algo-selected"]}>

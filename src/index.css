@@ -68,6 +68,9 @@
   /* Border radii */
   --default-border-radius: 9px;
   --medium-border-radius: 11px;
+
+  /* Code  */
+  --code-bg-color: rgb(41, 44, 51);
 }
 
 @font-face {

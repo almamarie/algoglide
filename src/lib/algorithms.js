@@ -2,44 +2,44 @@ const algorithmsObject = {
   "sorting algorithms": [
     {
       "bubble sort": {
-        Javascript: ``,
-        Python: ``,
-        Java: `
-        public class BubbleSort {
-            public void sort(int[] array){
-                boolean isSorted;
-                for (int i = 0; i < array.length; i++) {
-                    isSorted = true;
-                    for (int j = 1; j < array.length - i; j++) {
-                        if (array[j] < array[j - 1]) {
-                            swap(array, j, j - 1);
-                            isSorted = false;
-                        }
-        
-                    }
-                    if (isSorted) return;
-        
+        javascript: ``,
+        python: ``,
+        java: `
+public class BubbleSort {
+    public void sort(int[] array){
+        boolean isSorted;
+        for (int i = 0; i < array.length; i++) {
+            isSorted = true;
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j] < array[j - 1]) {
+                    swap(array, j, j - 1);
+                    isSorted = false;
                 }
-            }
         
-        public void swap(int[] array, int index1, int index2){
-            int tmp = array[index1];
-            array[index1] = array[index2];
-            array[index2] = tmp;
+            }
+            if (isSorted) return;
+        
         }
-        }`,
+    }
+        
+public void swap(int[] array, int index1, int index2){
+    int tmp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = tmp;
+  }
+}`,
       },
     },
-    { "heap sort": { Javascript: ``, Python: ``, Java: `` } },
-    { "insertion sort": { Javascript: ``, Python: ``, Java: `` } },
-    { "merge sort": { Javascript: ``, Python: ``, Java: `` } },
-    { "quick sort": { Javascript: ``, Python: ``, Java: `` } },
-    { "selection sort": { Javascript: ``, Python: ``, Java: `` } },
+    { "heap sort": { javascript: ``, python: ``, java: `` } },
+    { "insertion sort": { javascript: ``, python: ``, java: `` } },
+    { "merge sort": { javascript: ``, python: ``, java: `` } },
+    { "quick sort": { javascript: ``, python: ``, java: `` } },
+    { "selection sort": { javascript: ``, python: ``, java: `` } },
   ],
 
   "searching algorithms": [
-    { "binary search": { Javascript: ``, Python: ``, Java: `` } },
-    { "linear search": { Javascript: ``, Python: ``, Java: `` } },
+    { "binary search": { javascript: ``, python: ``, java: `` } },
+    { "linear search": { javascript: ``, python: ``, java: `` } },
   ],
 };
 

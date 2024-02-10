@@ -1,0 +1,22 @@
+
+.btn {
+    color: var(--color-white);
+    background-color: var(--btn-bg-color);
+    border-radius: var(--default-border-radius);
+    border: none;
+    cursor: pointer;
+    padding: 1.6rem 2.4rem;
+  }
+  
+  .btn:hover {
+    background-color: var(--btn-hover-color);
+  }
+  
+  .btn:active {
+    background-color: var(--btn-active-color);
+  }
+  
+  .btn:visited {
+    background-color: var(--btn-visited-color);
+  }
+  

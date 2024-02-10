@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import autoGenerateArrayofIntegers from "../lib/generateRandomIntegers";
-
-// NOTE: maximum array size is 200
+import { MAX_ARRAY_SIZE, MIN_ARRAY_SIZE } from "../lib/constants";
 
 const defaultArraySize = 10;
 const ArrayContext = React.createContext({
@@ -16,18 +15,23 @@ export const ArrayContextProvider = (props) => {
   const [arraySize, setArraySize] = useState(defaultArraySize);
   const [array, setArray] = useState(autoGenerateArrayofIntegers(arraySize));
 
-  const autoGenerateArray = () => {
-    setArray(autoGenerateArrayofIntegers(arraySize));
+  const autoGenerateArray = (size = array) => {
+    setArray(autoGenerateArrayofIntegers(size));
+    console.log("Array: ", array);
   };
 
   const addItemToArray = (item) => {
+    if (!item) return;
     if (typeof item !== "number") return;
-    setArray((prev) => prev.push(item));
+    setArray((prev) => [...prev, item]);
   };
 
   const changeArraySize = (size) => {
     if (typeof size !== "number") return;
+    if (size < MIN_ARRAY_SIZE || size > MAX_ARRAY_SIZE) return;
+
     setArraySize(size);
+    autoGenerateArray(size);
   };
 
   return (

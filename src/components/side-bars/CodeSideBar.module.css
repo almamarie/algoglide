@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: var(--bg-footer);
+  background-color: var(--code-bg-color);
 
   position: absolute;
   right: 1rem;
@@ -26,10 +26,33 @@
   cursor: pointer;
 }
 
-.main {
-  margin-top: 1rem;
+.copy-button,
+.copy-button:active {
+  color: var(--color-white);
+
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
 }
 
+.copy-button:hover {
+  color: var(--btn-bg-color);
+}
+
+.main {
+  padding: 3rem;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.code {
+  font-size: 1.2rem;
+}
 .no-algo-selected-wrapper {
   width: 100%;
   height: 100%;

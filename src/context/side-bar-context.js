@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const SideBarContext = React.createContext({
-  showCodeSideBar: true,
+  showCodeSideBar: false,
   showDataFormSideBar: true,
   toggleShowCodeSideBar: () => {},
   toggleShowDataFormSideBar: () => {},
 });
 
 export const SideBarContextProvider = (props) => {
-  const [showCodeSideBar, setShowCodeSideBar] = useState(true);
+  const [showCodeSideBar, setShowCodeSideBar] = useState(false);
   const [showDataFormSideBar, setShowDataFormSideBar] = useState(true);
 
   const toggleShowCodeSideBar = () => {
