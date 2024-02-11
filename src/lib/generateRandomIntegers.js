@@ -14,7 +14,7 @@ const autoGenerateArrayofIntegers = (arraySize) => {
 
   while (array.length < arraySize) {
     const generatedNumber = Math.floor(Math.random() * maxArrayNumber);
-    if (generatedNumber === 0) continue;
+    if (generatedNumber <= 1 || isNaN(generatedNumber)) continue;
     array.push(generatedNumber);
   }
 
@@ -33,29 +33,23 @@ const autoGenerateArrayofIntegers = (arraySize) => {
  *  - 0 - 10    = 50
  */
 const calcMaxArraySize = (arraySize) => {
-  let maxArrayNumber;
-
   if (arraySize <= 10) {
-    maxArrayNumber = 50;
+    return 50;
   }
 
   if (arraySize >= 11 && arraySize < 50) {
-    maxArrayNumber = 200;
+    return 200;
   }
 
   if (arraySize >= 50 && arraySize < 100) {
-    maxArrayNumber = 400;
+    return 400;
   }
 
   if (arraySize >= 100 && arraySize < 150) {
-    maxArrayNumber = 800;
+    return 800;
   }
 
-  if (arraySize >= 200) {
-    maxArrayNumber = 1000;
-  }
-
-  return maxArrayNumber;
+  return 1000;
 };
 
 export default autoGenerateArrayofIntegers;

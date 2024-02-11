@@ -12,21 +12,19 @@ import { MAX_ARRAY_SIZE, MIN_ARRAY_SIZE } from "../../../lib/constants";
  *
  */
 
-const minWidth = 0.1;
-const maxWidth = 8;
+const minWidth = 8;
+const maxWidth = 0.2;
 
 const BubbleSort = () => {
   const arrayCtx = useContext(ArrayContext);
 
   const maxArrayValue = Math.max(...arrayCtx.array);
   const calcHeight = (height) => {
-    const calcHeight = (height / maxArrayValue) * 60;
-    return calcHeight;
+    const calculatedHeight = (height / maxArrayValue) * 60;
+    return calculatedHeight;
   };
 
-  //   FIXME: Fix the below code
   function calculateDivWidth() {
-    // Check for invalid input
     const arrayLength = arrayCtx.array.length;
     const minItems = MIN_ARRAY_SIZE;
     const maxItems = MAX_ARRAY_SIZE;
@@ -42,9 +40,6 @@ const BubbleSort = () => {
 
     return width;
   }
-
-  const divWidth = calculateDivWidth();
-  console.log(`Div width for ${arrayCtx.array.length} items: ${divWidth}`);
 
   bubbleSort([...arrayCtx.array]);
   return (

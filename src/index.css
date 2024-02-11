@@ -30,6 +30,7 @@
   --color-blue-light: #d9e4fc;
   --color-orange: #f99d49;
   --color-rose: #fdcae4;
+  --color-black: #000;
 
   /* System Colors */
   --color-error: var(--color-red);
