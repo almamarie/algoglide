@@ -1,5 +1,5 @@
 /**
- * Generates an array of random integers
+ * Generates an array of random non zero integers
  *
  * @param {number} arraySize the size to the array to generate
  * @returns an array of integers
@@ -12,8 +12,9 @@ const autoGenerateArrayofIntegers = (arraySize) => {
   if (arraySize < 5) arraySize = 5;
   if (arraySize > 200) arraySize = 200;
 
-  for (let i = 0; i < arraySize; i++) {
+  while (array.length < arraySize) {
     const generatedNumber = Math.floor(Math.random() * maxArrayNumber);
+    if (generatedNumber === 0) continue;
     array.push(generatedNumber);
   }
 
@@ -21,7 +22,7 @@ const autoGenerateArrayofIntegers = (arraySize) => {
 };
 
 /**
- * Calculates the max array number
+ * Calculates the max possible array number
  *
  * @param {number} arraySize the size of the array to be generated
  * @returns a number in the below order:

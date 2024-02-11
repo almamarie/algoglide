@@ -2,7 +2,27 @@ const algorithmsObject = {
   "sorting algorithms": [
     {
       "bubble sort": {
-        javascript: ``,
+        javascript: `
+const bubbleSort = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    let isSorted = true;
+    for (let j = 0; j < array.length - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        swap(array, j, j + 1);
+        isSorted = false;
+      }
+    }
+
+    if (isSorted) break;
+  }
+};
+
+const swap = (array, index1, index2) => {
+  const temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+};
+`,
         python: ``,
         java: `
 public class BubbleSort {

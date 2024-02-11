@@ -11,7 +11,7 @@ const signals = ["start", "stop", "pause"];
 const AlgorithmContext = React.createContext({
   algorithmSpeed: DEFAULT_ALGORITHM_SPEED,
   algorithmType: null,
-  algorithm: null,
+  algorithm: "bubble sort",
   runningAlgorithmSignal: "stop",
 
   setAlgorithmSpeed: () => {},
@@ -23,7 +23,7 @@ const AlgorithmContext = React.createContext({
 export const AlgorithmContextProvider = (props) => {
   const [algorithmSpeed, setAlgorithmSpeed] = useState(DEFAULT_ALGORITHM_SPEED);
   const [algorithmType, setAlgorithmType] = useState(null);
-  const [algorithm, setAlgorithm] = useState(null);
+  const [algorithm, setAlgorithm] = useState("bubble sort");
   const [runningAlgorithmSignal, setRunningAlgorithmSignal] = useState("stop");
 
   const changeAlgorithmSpeed = (speed) => {
