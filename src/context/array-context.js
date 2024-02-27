@@ -9,13 +9,14 @@ const ArrayContext = React.createContext({
   autoGenerateArray: () => {},
   addItemToArray: (item) => {},
   changeArraySize: (size) => {},
+  updateArray: (array) => {},
 });
 
 export const ArrayContextProvider = (props) => {
   const [arraySize, setArraySize] = useState(defaultArraySize);
   const [array, setArray] = useState(autoGenerateArrayofIntegers(arraySize));
 
-  const autoGenerateArray = (size = array) => {
+  const autoGenerateArray = (size = arraySize) => {
     setArray(autoGenerateArrayofIntegers(size));
     console.log("Array: ", array);
   };
@@ -34,6 +35,10 @@ export const ArrayContextProvider = (props) => {
     autoGenerateArray(size);
   };
 
+  const updateArray = (updatedArray) => {
+    setArray((prev) => updatedArray);
+  };
+
   return (
     <ArrayContext.Provider
       value={{
@@ -42,6 +47,7 @@ export const ArrayContextProvider = (props) => {
         autoGenerateArray,
         addItemToArray,
         changeArraySize,
+        updateArray,
       }}
     >
       {props.children}

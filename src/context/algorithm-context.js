@@ -46,8 +46,9 @@ export const AlgorithmContextProvider = (props) => {
   };
 
   const signalRunningAlgorithm = (signal) => {
-    if (!signals.find(signal)) return;
-    setRunningAlgorithmSignal(signal);
+    console.log("Algorithm state: ", signal);
+    if (!signals.find((sig) => sig === signal)) return;
+    setRunningAlgorithmSignal((prev) => signal);
   };
 
   return (
